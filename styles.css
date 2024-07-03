@@ -1,30 +1,46 @@
+/* Grundlegende Stile */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif; /* Einheitliche Schriftart für gesamte Seite */
     margin: 0;
     padding: 0;
+    line-height: 1.6; /* Verbesserung der Lesbarkeit */
 }
 
 header {
-    background-color: #333;
+    background-color: #333; /* Dunkler Hintergrund für Header */
     color: #fff;
     padding: 1em 0;
+    text-align: center;
 }
 
+/* Navigation */
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: center; /* zentriert die Navigationselemente */
+}
+
+nav ul li {
+    margin: 0 1em;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    padding: 0.5em 1em;
+    transition: background-color 0.3s; /* weicher Übergang beim Hovern */
+}
+
+nav ul li a:hover {
+    background-color: #444; /* Hover-Effekt für Navigationselemente */
 }
 
 main {
     padding: 2em;
+    max-width: 1200px;
+    margin: auto;
 }
 
 footer {
@@ -32,7 +48,75 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1em 0;
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
+}
+
+/* zusätzliche Stile */
+h1, h2 {
+    color: #333;
+}
+
+p, ul, li {
+    margin: 0.5em 0;
+}
+
+ul {
+    padding-left: 1.5em;
+}
+
+ul li {
+    list-style-type: disc;
+}
+
+/* Flexbox Layouts */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.flex-item {
+    flex: 1;
+    margin: 1em;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Responsive Design für Tablets */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* ändert Layout auf vertikal bei kleineren Bildschirmen */
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+
+    main {
+        padding: 1em;
+    }
+
+    .flex-item {
+        margin: 0.5em;
+    }
+}
+
+/* Responsive Design für Mobile */
+@media (max-width: 480px) {
+    nav ul li a {
+        padding: 0.5em;
+    }
+
+    main {
+        padding: 0.5em;
+    }
+
+    .flex-item {
+        margin: 0.5em;
+        padding: 0.5em;
+    }
 }
